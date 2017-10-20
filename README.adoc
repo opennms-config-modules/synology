@@ -1,6 +1,7 @@
 # Synology
 
-OpenNMS configuration for Synology Storage
+OpenNMS datacollection configuration for Synology Storage
+Poller configuration can be found here: https://wiki.opennms.org/wiki/Synology
 
 ## Installation
 
