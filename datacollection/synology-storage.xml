@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<datacollection-group xmlns="http://xmlns.opennms.org/xsd/config/datacollection"
- name="Synology">
-   <resourceType name="diskEntry" label="Synology Disk Temperature" resourceLabel="${index}">
-      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
-      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
-   </resourceType>
-   <group name="SynologySystem" ifType="ignore">
-      <mibObj oid=".1.3.6.1.4.1.6574.1.2" instance="0" alias="synoSysTemp" type="integer"/>
-   </group>
-   <group name="SynologyDisk" ifType="all">
-      <mibObj oid=".1.3.6.1.4.1.6574.2.1.1.1" instance="diskEntry" alias="synoDiskIndex" type="integer32"/>
-      <mibObj oid=".1.3.6.1.4.1.6574.2.1.1.6" instance="diskEntry" alias="synoDiskTemp" type="integer32"/>
-   </group>
-  <systemDef name="Synology-System">
-    <sysoidMask>.1.3.6.1.4.1.8072.3.2.10</sysoidMask>
-    <collect>
-      <includeGroup>SynologySystem</includeGroup>
-      <includeGroup>SynologyDisk</includeGroup>
-    </collect>
-  </systemDef>
+<datacollection-group xmlns="http://xmlns.opennms.org/xsd/config/datacollection" name="Synology">
+    <resourceType name="diskEntry" label="Synology Disk Temperature" resourceLabel="${index}">
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+    <group name="SynologySystem" ifType="ignore">
+        <mibObj oid=".1.3.6.1.4.1.6574.1.2" instance="0" alias="synoSysTemp" type="integer"/>
+    </group>
+    <group name="SynologyDisk" ifType="all">
+        <mibObj oid=".1.3.6.1.4.1.6574.2.1.1.1" instance="diskEntry" alias="synoDiskIndex" type="integer32"/>
+        <mibObj oid=".1.3.6.1.4.1.6574.2.1.1.6" instance="diskEntry" alias="synoDiskTemp" type="integer32"/>
+    </group>
+    <systemDef name="Synology-System">
+        <sysoidMask>.1.3.6.1.4.1.8072.3.2.10</sysoidMask>
+        <collect>
+            <includeGroup>SynologySystem</includeGroup>
+            <includeGroup>SynologyDisk</includeGroup>
+        </collect>
+    </systemDef>
 
 </datacollection-group>

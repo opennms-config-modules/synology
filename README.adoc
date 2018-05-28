@@ -1,24 +1,37 @@
-# Synology
+= Synology
 
-OpenNMS datacollection configuration for Synology Storage
-Poller configuration can be found here: https://wiki.opennms.org/wiki/Synology
+OpenNMS configuration for Synology devices.
 
-## Installation
+== Installation
 
 .Download and install from GitHub
 [source, bash]
 ----
-cd $OPENNMS_HOME/etc/modules-available
+mkdir ${HOME}/opennms-config-workspace
+cd ${HOME}/opennms-config-workspace
 git clone https://github.com/opennms-config-modules/synology.git
 ----
 
-### Datacollection
+=== Events
+
+.Install events
+[source, bash]
+----
+cp ${HOME}/opennms-config-workspace/synology/events/*.xml ${OPENNMS_HOME}/etc/events
+----
+
+.Include in eventconf.xml
+[source, xml]
+----
+<event-file>events/synology.events.xml</event-file>
+----
+
+=== Data Collection
 
 .Install datacollection configuration
 [source, bash]
 ----
-cd $OPENNMS_HOME/etc/datacollection
-ln -s ../modules-available/synology/datacollection/*.xml .
+cp ${HOME}/opennms-config-workspace/synology/datacollection/*.xml ${OPENNMS_HOME}/etc/datacollection
 ----
 
 .Include in datacollection-config.xml
@@ -27,13 +40,10 @@ ln -s ../modules-available/synology/datacollection/*.xml .
 <include-collection dataCollectionGroup="Synology"/>
 ----
 
-### Graph report definitions
+=== Graph Report Definitions
 
 .Install graph report definitions
 [source, bash]
 ----
-cd $OPENNMS_HOME/etc/snmp-graph.properties.d
-ln -s ../modules-available/synology/graphs/*.properties .
+cp ${HOME}/opennms-config-workspace/synology/graphs/*.properties ${OPENNMS_HOME}/etc/snmp-graph.properties.d
 ----
-
-
