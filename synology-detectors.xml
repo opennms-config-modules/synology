@@ -1,0 +1,40 @@
+      <detector name="Synology-System-Status" class="org.opennms.netmgt.provision.detector.snmp.SnmpDetector">
+         <parameter key="ipMatch" value="10.1-40.*.* || 172.21-22.*.* "/>
+         <parameter key="oid" value=".1.3.6.1.4.1.6574.1.1.0"/>
+         <parameter key="port" value="161"/>
+      </detector>
+      <detector name="Synology-Power-Status" class="org.opennms.netmgt.provision.detector.snmp.SnmpDetector">
+         <parameter key="ipMatch" value="10.1-40.*.* || 172.21-22.*.* "/>
+         <parameter key="oid" value=".1.3.6.1.4.1.6574.1.3.0"/>
+         <parameter key="port" value="161"/>
+      </detector>
+      <detector name="Synology-System-Fan" class="org.opennms.netmgt.provision.detector.snmp.SnmpDetector">
+         <parameter key="ipMatch" value="10.1-40.*.* || 172.21-22.*.* "/>
+         <parameter key="oid" value=".1.3.6.1.4.1.6574.1.4.1.0"/>
+         <parameter key="port" value="161"/>
+      </detector>
+      <detector name="Synology-CPU-Fan" class="org.opennms.netmgt.provision.detector.snmp.SnmpDetector">
+         <parameter key="ipMatch" value="10.1-40.*.* || 172.21-22.*.* "/>
+         <parameter key="oid" value=".1.3.6.1.4.1.6574.1.4.2.0"/>
+         <parameter key="port" value="161"/>
+      </detector>
+      <detector name="Synology-Update-Status" class="org.opennms.netmgt.provision.detector.snmp.SnmpDetector">
+         <parameter key="ipMatch" value="10.1-40.*.* || 172.21-22.*.* "/>
+         <parameter key="oid" value=".1.3.6.1.4.1.6574.1.5.4.0"/>
+         <parameter key="port" value="161"/>
+      </detector>
+      <detector name="Synology-Update-Server" class="org.opennms.netmgt.provision.detector.snmp.SnmpDetector">
+         <parameter key="ipMatch" value="10.1-40.*.* || 172.21-22.*.* "/>
+         <parameter key="oid" value=".1.3.6.1.4.1.6574.1.5.4.0"/>
+         <parameter key="port" value="161"/>
+      </detector>
+      <detector name="Synology-Drive-Physical" class="org.opennms.netmgt.provision.detector.snmp.SnmpDetector">
+         <parameter key="ipMatch" value="10.1-40.*.* || 172.21-22.*.* "/>
+         <parameter key="oid" value=".1.3.6.1.4.1.6574.2.1.1.5"/>
+         <parameter key="port" value="161"/>
+      </detector>
+      <detector name="Synology-Raid1-Status" class="org.opennms.netmgt.provision.detector.snmp.SnmpDetector">
+         <parameter key="ipMatch" value="10.1-40.*.* || 172.21-22.*.* "/>
+         <parameter key="oid" value=".1.3.6.1.4.1.6574.3.1.1.3.0"/>
+         <parameter key="port" value="161"/>
+      </detector>

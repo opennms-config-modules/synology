@@ -47,3 +47,16 @@ cp ${HOME}/opennms-config-workspace/synology/datacollection/*.xml ${OPENNMS_HOME
 ----
 cp ${HOME}/opennms-config-workspace/synology/graphs/*.properties ${OPENNMS_HOME}/etc/snmp-graph.properties.d
 ----
+
+=== Monitors
+
+Adopt the required service poller configurations provided in `synology-monitors.xml` into `poller-configuration.xml`.
+
+=== Detectors
+
+Adopt the required service poller detector configurations provided in `synology-detectors.xml` into a foreignSource definition.
+
+= References
+
+* SNMP configuration: https://www.synology.com/en-global/knowledgebase/DSM/help/DSM/AdminCenter/system_snmp
+* MIB: https://global.download.synology.com/download/Document/MIBGuide/Synology_DiskStation_MIB_Guide.pdf
